@@ -1,0 +1,12 @@
+
+CREATE TABLE IF NOT EXISTS user_roles (
+user_id BIGINT NOT NULL,
+roles VARCHAR(255) NULL
+);
+
+ALTER TABLE user_roles
+ADD CONSTRAINT fk_user_roles_user
+FOREIGN KEY (user_id)
+REFERENCES users (id)
+ON DELETE CASCADE
+ON UPDATE CASCADE;
